@@ -26,3 +26,17 @@ C:\Users\Michael\Documents\computing lvl 8\github\oop sem3\ca2\oop-ca2-2024-2025
 C:\Users\Michael\Documents\computing lvl 8\github\oop sem3\ca2\oop-ca2-2024-2025-blackjack-NotBrian122\GameOfBlackJack\obj\Debug\net6.0\GameOfBlackJack.pdb
 C:\Users\Michael\Documents\computing lvl 8\github\oop sem3\ca2\oop-ca2-2024-2025-blackjack-NotBrian122\GameOfBlackJack\obj\Debug\net6.0\GameOfBlackJack.genruntimeconfig.cache
 C:\Users\Michael\Documents\computing lvl 8\github\oop sem3\ca2\oop-ca2-2024-2025-blackjack-NotBrian122\GameOfBlackJack\obj\Debug\net6.0\ref\GameOfBlackJack.dll
+C:\Users\Michael\Documents\computing lvl 8\sem3\ObjectOreiented c#\PROJECT\GameOfBlackJack\GameOfBlackJack\bin\Debug\net6.0\GameOfBlackJack.exe
+C:\Users\Michael\Documents\computing lvl 8\sem3\ObjectOreiented c#\PROJECT\GameOfBlackJack\GameOfBlackJack\bin\Debug\net6.0\GameOfBlackJack.deps.json
+C:\Users\Michael\Documents\computing lvl 8\sem3\ObjectOreiented c#\PROJECT\GameOfBlackJack\GameOfBlackJack\bin\Debug\net6.0\GameOfBlackJack.runtimeconfig.json
+C:\Users\Michael\Documents\computing lvl 8\sem3\ObjectOreiented c#\PROJECT\GameOfBlackJack\GameOfBlackJack\bin\Debug\net6.0\GameOfBlackJack.dll
+C:\Users\Michael\Documents\computing lvl 8\sem3\ObjectOreiented c#\PROJECT\GameOfBlackJack\GameOfBlackJack\bin\Debug\net6.0\GameOfBlackJack.pdb
+C:\Users\Michael\Documents\computing lvl 8\sem3\ObjectOreiented c#\PROJECT\GameOfBlackJack\GameOfBlackJack\obj\Debug\net6.0\GameOfBlackJack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Michael\Documents\computing lvl 8\sem3\ObjectOreiented c#\PROJECT\GameOfBlackJack\GameOfBlackJack\obj\Debug\net6.0\GameOfBlackJack.AssemblyInfoInputs.cache
+C:\Users\Michael\Documents\computing lvl 8\sem3\ObjectOreiented c#\PROJECT\GameOfBlackJack\GameOfBlackJack\obj\Debug\net6.0\GameOfBlackJack.AssemblyInfo.cs
+C:\Users\Michael\Documents\computing lvl 8\sem3\ObjectOreiented c#\PROJECT\GameOfBlackJack\GameOfBlackJack\obj\Debug\net6.0\GameOfBlackJack.csproj.CoreCompileInputs.cache
+C:\Users\Michael\Documents\computing lvl 8\sem3\ObjectOreiented c#\PROJECT\GameOfBlackJack\GameOfBlackJack\obj\Debug\net6.0\GameOfBlackJack.dll
+C:\Users\Michael\Documents\computing lvl 8\sem3\ObjectOreiented c#\PROJECT\GameOfBlackJack\GameOfBlackJack\obj\Debug\net6.0\refint\GameOfBlackJack.dll
+C:\Users\Michael\Documents\computing lvl 8\sem3\ObjectOreiented c#\PROJECT\GameOfBlackJack\GameOfBlackJack\obj\Debug\net6.0\GameOfBlackJack.pdb
+C:\Users\Michael\Documents\computing lvl 8\sem3\ObjectOreiented c#\PROJECT\GameOfBlackJack\GameOfBlackJack\obj\Debug\net6.0\GameOfBlackJack.genruntimeconfig.cache
+C:\Users\Michael\Documents\computing lvl 8\sem3\ObjectOreiented c#\PROJECT\GameOfBlackJack\GameOfBlackJack\obj\Debug\net6.0\ref\GameOfBlackJack.dll
