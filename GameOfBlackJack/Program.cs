@@ -5,221 +5,156 @@ namespace GameOfBlackJack
 {
     internal class Program
     {
+        //these are player and dealer game scores static to use across programmes
         public static int PlayerScore = 0;
         public static int DealerScore = 0;
+
         static void Main(string[] args)
         {
-            bool mainLoop = true,stickOrTwistLoop = true;
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            //this is to use aski and euro symbol
 
-            string stickOrTwist = "", playerCard ="" ;
-            int i = 0, playerBets = 10; 
+            //var region
+            int playerMoney = 0;
+            bool mainLoop = true;
+            
+
             do//mainLoop
             {
+                //Beginnign of each game we generate a new deck of cards.
+                int suitInt = 0;
+                List<Card> Deck = new List<Card>();
+                // new Deck is generated in the form of a list (its easier to remove cards this way)
 
-                while (stickOrTwistLoop)//stickOrTwist while loop (for some variety)
+                //then we create a player and a dealer type inherinting player values
+                LocalPlayer gamePlayer = new LocalPlayer();
+                Dealer gameDealer = new Dealer();
+
+                for (int i = 0; i < 4; i++)//every suit for every deck
                 {
-                    for (;i < 2; i++)//the reason why its null- easier to change for a double output then a single if i set the variable below
+                    //counts each card number
+                    for (int j = 1; j < 15; j++)
                     {
-                        Card pCard = new Card();
-                        playerCard = pCard.ToString();
-                        Console.WriteLine(ObtainingPlayerCardValues(playerCard, "Player"));
-                        Console.WriteLine(DrawingCards(playerCard));
-
-                        if (DealerScore <= 17)
+                        switch (suitInt)
                         {
-                            Card dCard = new Card();
-                            ObtainingPlayerCardValues(pCard.ToString(), "Dealer");
+                            case 0:
+                                Card cardH = new Card(j, "Hearts");//so a suit then a value of 1 => 14
+                                Deck.Add(cardH);
+                                break;
+                            case 1:
+                                Card cardD = new Card(j, "Diamonds");
+                                Deck.Add(cardD);
+                                break;
+                            case 2:
+                                Card cardS = new Card(j, "Spades");
+                                Deck.Add(cardS);
+                                break;
+                            case 3:
+                                Card cardC = new Card(j, "Clubs");
+                                Deck.Add(cardC);
+                                break;
                         }
                     }
-
-                    if(i == 2)
-                    {
-                        Console.WriteLine($"Your score is {PlayerScore}\n");
-                        Console.WriteLine("Do you want to stick or twist - s/t?");
-                        stickOrTwist = Console.ReadLine();
-                    }
-                    else if (i == 3)
-                    {
-                        Console.WriteLine("Do you want to stick or twist - s/t?");
-                        stickOrTwist = Console.ReadLine();
-                    }
-
-                    if (stickOrTwist.ToLower() != "s" && stickOrTwist.ToLower() != "t")//|| (stickOrTwist.ToLower() != "stick" && stickOrTwist.ToLower() != "twist"))
-                    {
-                        Console.WriteLine("You didnt enter the right char/string");
-                        i = 3; 
-
-                    }else if (stickOrTwist.ToLower() == "s" || stickOrTwist.ToLower() == "stick")
-                    {
-                        Console.WriteLine("Dealer Plays \n");
-                        i = 1;
-                    }
-                    else if (stickOrTwist.ToLower() == "t" || stickOrTwist.ToLower() == "twist")
-                    {
-                        stickOrTwistLoop = false ;
-                        Console.WriteLine("Player Twists");
-                    }
+                    suitInt++;//just counts the deck 
                 }
 
-                ReturnFinalPlay();
+                //main menu
+                Console.WriteLine("Welcome to BlackJack");
+                string mainMenuChoice = MainMenu();
 
+                //you get awarded €10 for your first play
+                if(mainMenuChoice == "NG")
+                {
+                    Console.WriteLine($"\nFor your first game the house awards you {playerMoney += 10:c2}");
+
+
+                    //dealer takes 4 cards from the deck and deals 2 to the player face up and one of theirs face up. 
+                    Random generateCardRandom = new Random();
+                    for (int i = 0; i < 4; i++)
+                    {
+                        int randomNumb = generateCardRandom.Next(1, 53);//generates a random number between 1 and 52
+
+                        if (i % 2 == 0)//even is the house and odd is the player
+                        {
+                            gameDealer.CardValue = Deck[randomNumb].CardName;
+                            gameDealer.SuitName = Deck[randomNumb].SuitType;
+               
+
+                        }else
+                        {
+                            gamePlayer.CardValue = Deck[randomNumb].CardName;
+                            gamePlayer.SuitName = Deck[randomNumb].SuitType;
+                            Console.WriteLine(gamePlayer.);
+                        }    
+                        Deck.RemoveAt(randomNumb);//removes the card used from the deck
+                    }
+
+                    //player takes 2 cards from deck, so does the dealer
+                    Console.WriteLine("\nThe house deals 2 cards from the hand...");
+                    Random dealingCards = new Random();
+                    dealingCards.Next(0, 6);
+                    
+                    
+                   
+                 
+                    //your presented with your total and asked to play again
+
+                    //if you play again (stick) you take another card from the deck - so does the dealer. 
+
+                    //compare scores or stick and twist again
+
+                }
+                else if (mainMenuChoice == "LOG")
+                {
+
+                }else if (mainMenuChoice == "EX")
+                {
+                    Console.WriteLine("\nGoodBye");
+                    mainLoop = true; 
+                }
             } while (mainLoop == false);
-
+            //exit game
         }
-        public static string ObtainingPlayerCardValues(string cardString,string userType)
+
+        public static string MainMenu()
         {
-            int cardValue = 0;
-            string suitName = "",cardName;
-            string[] valuesString = cardString.Split(',');
-            string[] specialCards = { "King", "Queen", "Jack", "Ace" };
-
-            cardName = valuesString[0];
-            suitName = valuesString[1];
-
-            if(userType == "Player")
+            string menuChoiceString = "";
+            bool mainMenuLoop = true;
+            do
             {
-                if (!(int.TryParse(valuesString[0], out cardValue)))
+                Console.Write("\n1.Play New Game\n2.Load old game\n3.Exit\n(Enter 1,2 or 3):");
+                string mainMenuChoice = Console.ReadLine();
+
+                switch (mainMenuChoice)//this is to "fool proof" this program
                 {
-                    if (cardName == "Ace")
-                    {
-                        cardValue += PulledAnAce(11, userType);
-                        PlayerScore += cardValue;
-                    }
-                    else
-                    {
-                        cardValue += 10;
-                        PlayerScore += cardValue;
-                    }
+                    case "1":
+                        menuChoiceString = "NG";//new game
+                        break;
+                    case "2":
+                        menuChoiceString = "LOG";//log old games
+                        break;
+                    case "3":
+                        menuChoiceString = "EX";//exit 
+                        break;
+                    default://this defualt case is to check that if any of the other cases didnt work this one would repeat the loop and ask players again
+                        mainMenuLoop = false;
+                        if (!int.TryParse(menuChoiceString, out int tempScore))
+                        {
+                            Console.WriteLine("You didnt enter a intager");
+                        }
+                        else if (int.TryParse(menuChoiceString, out tempScore) && tempScore > 3)
+                        {
+                            Console.WriteLine("You enterd too large a number");
+                        }
+                        else if (int.TryParse(menuChoiceString, out tempScore) && tempScore < 1)
+
+                            Console.WriteLine("The number you enterd was too small \nTry again:");
+                        break;
                 }
-                else if (int.TryParse(valuesString[0], out cardValue))
-                {
-                    PlayerScore += cardValue;
-                }
-                return $"You pulled a {cardName} of {suitName}, with a value of {cardValue}";
-            }
-            else
-            {
-                if (!(int.TryParse(valuesString[0], out cardValue)))
-                {
-                    if (cardName == "Ace")
-                    {
-                        cardValue += PulledAnAce(11,userType);
-                        DealerScore += cardValue;
-                    }
-                    else
-                    {
-                        cardValue += 10;
-                        DealerScore += cardValue;
-                    }
-                }
-                else if (int.TryParse(valuesString[0], out cardValue))
-                {
-                    DealerScore += cardValue;
-                }
-                return $"The dealer pulled a {cardName} of {suitName}, with a value of {cardValue}";
-            }
-        }
-        public static int PulledAnAce(int aceValue,string userType)
-        {
-            bool aceLoop = false;//main fault loop
-            string number = "", inCaseOfLoop = "You pulled an Ace!!\nYou can either  c";
-            string formattingNiceNess = "======================";
-            int tempNumber, loopAgain = 0;
+            } while (mainMenuLoop == false);
 
-            if (userType == "Player")
-            {
-                do
-                {
-                    if (loopAgain >= 1)
-                        inCaseOfLoop = "\nC";
+            return menuChoiceString;
 
-                    Console.WriteLine($"{formattingNiceNess}\n{inCaseOfLoop}hoose 11 OR 1\n{formattingNiceNess}");
-                    number = Console.ReadLine();
-
-                    if ((int.TryParse(number, out tempNumber) && tempNumber == 1) || (number.ToUpper() == "ONE"))
-                    {
-                        aceValue = 1;
-                        aceLoop = true;
-                    }
-                    else if ((int.TryParse(number, out tempNumber) && tempNumber == 11) || (number.ToUpper() == "ELEVEN"))//a tryparse to check if it has passed and is 11
-                    {
-                        aceLoop = true;
-                    }
-                    else
-                    {
-                        Console.WriteLine("You didnt enter the right intager, try again");
-                        loopAgain++;
-                    }
-                } while (aceLoop == false);
-
-            }
-            else//dealing with a dealer who will automatically make the better judgement calls on this, **sometimes.
-            {
-                if(DealerScore <= 10)
-                {
-                    return aceValue;
-                }else
-                {
-                    return 1;
-                }
-            }
-
-            return aceValue;
-        }
-        public static string DrawingCards(string playerCard)
-        {
-            string cardValue = "", suitName = ""
-            , topAndBottomCard = "=================",
-            edgeSection = "||";
-            string[] valuesString = playerCard.Split(',');
-
-            cardValue = valuesString[0];
-            suitName = valuesString[1];
-            for (int i = 0; i < 10; i++)
-            {
-                if(i == 0 || i == 10)
-                {
-                    Console.WriteLine(topAndBottomCard);
-                }else if (i == 1 || i == 8)
-                {
-                    Console.WriteLine($"||{cardValue}            {cardValue}||");
-                }else if(i == 2 || i == 9)
-                {
-                    Console.WriteLine($"||{suitName}{suitName}||");
-                }
-                else
-                {
-                    Console.WriteLine($"||            ||");
-                }
-            }
-
-            return $"{playerCard}";
-        }
-        public static string ReturnFinalPlay()
-        {
-            if (DealerScore >= PlayerScore && DealerScore < 21)
-            {
-                Console.WriteLine($"Dealer Wins, with a value of {DealerScore}, compared to player score of {PlayerScore}");
-
-            }
-            else if (PlayerScore >= DealerScore && PlayerScore < 21)
-            {
-                Console.WriteLine($"Player Wins, with a value of {PlayerScore}, compared to dealer score of {DealerScore}");
-            }
-            else if (PlayerScore == DealerScore)
-            {
-                Console.WriteLine($"Its a tie with player scoring {PlayerScore} and Dealer scoring {DealerScore}");
-
-            }
-            else if (PlayerScore > 21)
-            {
-                Console.WriteLine($"Dealer Wins, as players score exceeded 21 ({PlayerScore})");
-            }
-            else if (DealerScore > 21)
-            {
-                Console.WriteLine($"Player Wins, as Dealer score exceeded 21 ({PlayerScore})");
-            }
-            return "shit aint working";
         }
     }
 }

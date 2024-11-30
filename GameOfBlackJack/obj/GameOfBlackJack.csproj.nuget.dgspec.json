@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Michael\\Documents\\computing lvl 8\\github\\oop sem3\\ca2\\oop-ca2-2024-2025-blackjack-NotBrian122\\GameOfBlackJack\\GameOfBlackJack.csproj": {}
+    "C:\\Users\\Michael\\Documents\\computing lvl 8\\sem3\\ObjectOreiented c#\\PROJECT\\GameOfBlackJack\\GameOfBlackJack\\GameOfBlackJack.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Michael\\Documents\\computing lvl 8\\github\\oop sem3\\ca2\\oop-ca2-2024-2025-blackjack-NotBrian122\\GameOfBlackJack\\GameOfBlackJack.csproj": {
+    "C:\\Users\\Michael\\Documents\\computing lvl 8\\sem3\\ObjectOreiented c#\\PROJECT\\GameOfBlackJack\\GameOfBlackJack\\GameOfBlackJack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Michael\\Documents\\computing lvl 8\\github\\oop sem3\\ca2\\oop-ca2-2024-2025-blackjack-NotBrian122\\GameOfBlackJack\\GameOfBlackJack.csproj",
+        "projectUniqueName": "C:\\Users\\Michael\\Documents\\computing lvl 8\\sem3\\ObjectOreiented c#\\PROJECT\\GameOfBlackJack\\GameOfBlackJack\\GameOfBlackJack.csproj",
         "projectName": "GameOfBlackJack",
-        "projectPath": "C:\\Users\\Michael\\Documents\\computing lvl 8\\github\\oop sem3\\ca2\\oop-ca2-2024-2025-blackjack-NotBrian122\\GameOfBlackJack\\GameOfBlackJack.csproj",
+        "projectPath": "C:\\Users\\Michael\\Documents\\computing lvl 8\\sem3\\ObjectOreiented c#\\PROJECT\\GameOfBlackJack\\GameOfBlackJack\\GameOfBlackJack.csproj",
         "packagesPath": "C:\\Users\\Michael\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Michael\\Documents\\computing lvl 8\\github\\oop sem3\\ca2\\oop-ca2-2024-2025-blackjack-NotBrian122\\GameOfBlackJack\\obj\\",
+        "outputPath": "C:\\Users\\Michael\\Documents\\computing lvl 8\\sem3\\ObjectOreiented c#\\PROJECT\\GameOfBlackJack\\GameOfBlackJack\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Michael\\AppData\\Roaming\\NuGet\\NuGet.Config",
